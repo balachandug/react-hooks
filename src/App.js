@@ -1,12 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import {TreesContext} from "./"
+import { useContext } from 'react';
 
-function App({name}) {
-  return (
-    <div className="App">
-      <h1>
-        Hello {name}
-      </h1>
+function App(props) {
+  const {trees} = useContext(TreesContext);
+  console.log(trees) 
+  return(
+    <div>
+      <h1>Trees I have heard of</h1>
+      <ul>
+        {
+          trees.map((tree, index) => (
+            <li key={tree.id}>{tree.type}</li>
+          ))
+        }
+      </ul>
     </div>
   );
 }
