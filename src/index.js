@@ -1,11 +1,13 @@
-import React, { createContext, useEffect, useReducer, useRef, useState } from 'react';
+import React, { createContext, useContext, useEffect, useReducer, useRef, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {useInput} from "./useInput"
 import App from "./App"
 
-export const TreesContext = createContext();
+const TreesContext = createContext();
+
+export const useTrees = () => useContext(TreesContext)
 
 const trees = [
   {id:"1", type: "Maple"},
